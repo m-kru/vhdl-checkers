@@ -1,0 +1,45 @@
+CAPI=2:
+
+name: mkru:vhdl-checkers:duration
+
+filesets:
+  src:
+    files:
+      - src/duration.vhd
+    file_type: vhdlSource-2008
+    logical_name: checkers
+  tb_equal:
+    files:
+      - tb/tb_equal.vhd
+    file_type: vhdlSource-2008
+  tb_less_than:
+    files:
+      - tb/tb_less_than.vhd
+    file_type: vhdlSource-2008
+  tb_more_than:
+    files:
+      - tb/tb_more_than.vhd
+    file_type: vhdlSource-2008
+
+targets:
+  default:
+    filesets:
+      - src
+  tb_equal:
+    default_tool: ghdl
+    toplevel: tb_duration_equal
+    filesets:
+      - src
+      - tb_equal
+  tb_less_than:
+    default_tool: ghdl
+    toplevel: tb_duration_less_than
+    filesets:
+      - src
+      - tb_less_than
+  tb_more_than:
+    default_tool: ghdl
+    toplevel: tb_duration_more_than
+    filesets:
+      - src
+      - tb_more_than
