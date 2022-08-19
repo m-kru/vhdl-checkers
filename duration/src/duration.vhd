@@ -6,7 +6,7 @@ library ieee;
 -- time on given data signal.
 --
 -- POLICY - check policy. Must be one of: 'equal', 'less than' or 'more than'.
--- PREFIX - optional prefix used in report messages.
+-- PREFIX - an optional prefix used in report messages.
 entity Duration is
    generic (
       WIDTH  : positive := 1;

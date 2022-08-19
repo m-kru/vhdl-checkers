@@ -1,0 +1,29 @@
+CAPI=2:
+
+name: mkru:vhdl-checkers:value
+
+filesets:
+  src:
+    depend:
+      - mkru:vhdl-types:types
+    files:
+      - src/value.vhd
+    file_type: vhdlSource-2008
+    logical_name: checkers
+  tb:
+    depend:
+      - mkru:vhdl-types:types
+    files:
+      - tb/tb.vhd
+    file_type: vhdlSource-2008
+
+targets:
+  default:
+    filesets:
+      - src
+  tb:
+    default_tool: ghdl
+    toplevel: tb_value
+    filesets:
+      - src
+      - tb
